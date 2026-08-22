@@ -1,0 +1,6 @@
+{
+  "name": "Calculocus - Graphing Calculator",
+  "description": "Calculocus - 2D/3D Graphing Calculator and Computer Algebra System.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

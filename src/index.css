@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow: hidden;
+  }
+}
+
+/* Custom Sharp Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #252528;
+  border-radius: 0px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #383842;
+}
+
+.light ::-webkit-scrollbar-track {
+  background: #F3F4F6;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: #C4C7CF;
+  border-radius: 0px;
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}
+
+/* KaTeX custom styling */
+.dark .katex {
+  color: #FFFFFF;
+}
+
+.light .katex {
+  color: #000000;
+}
+
