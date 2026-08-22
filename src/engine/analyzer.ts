@@ -791,9 +791,13 @@ export class CurveAnalyzer {
           const yFar = Math.max(yFarLeft, yFarRight);
 
           // A true pole has extremely large values very close to it (e.g., > 150)
-          // and grows significantly larger as we approach the pole (e.g., yClose > 1.2 * yFar)
-          // unless both are already astronomical (yClose > 1e4).
-          const isTrueAsymptote = yClose > 150 && (yClose > 1.2 * yFar || yClose > 1e4);
+          // and grows significantly larger as we approach the pole (e.g., yClose > 1.5 * yFar).
+          // If values are already astronomical, we verify that the value does not decrease as we move closer (or is infinite).
+          const isTrueAsymptote = yClose > 150 && (
+            yClose > 1.5 * yFar ||
+            (yClose > 1e10 && yClose > 1.05 * yFar) ||
+            (!isFinite(f(poleX - 1e-6)) || !isFinite(f(poleX + 1e-6)))
+          );
 
           if (!foundV.has(key) && isTrueAsymptote) {
             foundV.add(key);
